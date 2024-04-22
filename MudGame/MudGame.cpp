@@ -13,19 +13,16 @@ int main()
     int menu;
     string title;
     Character user;
-    bool characterMaded;
     MAP map1;
 
 //초기화
     scene = SCENE::TITLE_SCENE;
     menu = 0;
-    InitCharacter(user);
-    characterMaded = false;
     InitMap(map1);
     RoadMap(map1, "map1.txt");
 
 //개발 요소
-    QuickChMake(user, characterMaded);
+    user.QuickCHMade();
 
 //로직
     while (true)
@@ -41,13 +38,13 @@ int main()
         case TITLE_SCENE:
             break;
         case MAIN_SCENE:
-            displayMain(user, characterMaded, map1);
+            displayMain(user, map1);
             break;
         case INPUT_SCENE:
-            displayInput(user, characterMaded);
+            displayInput(user);
             break;
         case TOTAL_SCENE:
-            displayCharacter(user);
+            user.Display();
             break;
         default:
             break;

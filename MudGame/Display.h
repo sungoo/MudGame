@@ -20,10 +20,8 @@ string SelectTitle(SCENE scene);
 
 void displayTitle(string title);
 
-void displayMain(Character& ch, bool& isChMaded, MAP map);
+void displayMain(Character& ch, MAP map);
 
-void displayInput(Character& ch, bool& isChMaded);
-
-void displayCharacter(Character ch);
+void displayInput(Character& ch);
 
 void displayMap(MAP m);

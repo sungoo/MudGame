@@ -2,7 +2,6 @@
 #include "Display.h"
 #include "Line.h"
 
-//입력한 값이 범위에 맞는지 체크
 bool IsInRange(int input) {
     if (input >= 0)
         return true;
@@ -10,19 +9,24 @@ bool IsInRange(int input) {
         return false;
 }
 //캐릭터 초기화
-void InitCharacter(Character& ch) {
-    ch.name = "000";
-    ch.MAX_hp = 0;
-    ch.MAX_mp = 0;
-    ch.hp = 0;
-    ch.mp = 0;
-    ch.atk = 0;
-    ch.def = 0;
-    ch.speed = 0;
-    ch.Total_point = 200;
+Character::Character() {
+    this->name = "000";
+    this->MAX_hp = 0;
+    this->MAX_mp = 0;
+    this->hp = 0;
+    this->mp = 0;
+    this->atk = 0;
+    this->def = 0;
+    this->speed = 0;
+    this->Total_point = 200;
+
+    this->isChMaded = false;
+}
+Character::~Character() {
+
 }
 //캐릭터 생성
-void CharacterInput(Character& ch, bool& isChMaded) {
+void Character::Input() {
     CH_E element = CH_E::MAXIMUM;
     bool isAllUpdated[CH_E::MAXIMUM] = { false, };
     bool updateDone = false;
@@ -34,20 +38,20 @@ void CharacterInput(Character& ch, bool& isChMaded) {
     {
         system("cls");
         displayTitle("★캐릭터 생성★");
-        displayCharacter(ch);
+        this->Display();
         FillLine(' ', 50, false);
-        cout << "포인트 : " << ch.Total_point-usedPoint << endl;
+        cout << "포인트 : " << this->Total_point-usedPoint << endl;
 
         //모든 값 저장 완료, 사용 가능 포인트 모두 소모.
-        if (updateDone&&ch.Total_point==usedPoint) {
+        if (updateDone&& this->Total_point==usedPoint) {
             cout << "캐릭터 생성 완료!" << endl;
             break;
         }
 
-        if (usedPoint < ch.Total_point) {
+        if (usedPoint < this->Total_point) {
             cout << "사용할 수 있는 포인트가 남아있습니다. 전부 소모해주세요." << endl;
         }
-        else if (usedPoint > ch.Total_point) {
+        else if (usedPoint > this->Total_point) {
             cout << "사용 가능한 포인트를 초과하였습니다. 넘는 값을 줄여주세요." << endl;
         }
 
@@ -71,38 +75,38 @@ void CharacterInput(Character& ch, bool& isChMaded) {
         {
         case NAME:
             cout << "이름 : ";
-            cin >> ch.name;
+            cin >> this->name;
             isAllUpdated[NAME] = true;
             break;
         case M_HP:
             cout << "최대 HP : ";
             cin >> inputTEMP;
             if(IsInRange(inputTEMP))
-                ch.MAX_hp = inputTEMP;
+                this->MAX_hp = inputTEMP;
             else {
                 inputTEMP = -1;
                 break;
             }
-            ch.hp = ch.MAX_hp;
+            this->hp = this->MAX_hp;
             isAllUpdated[M_HP] = true;
             break;
         case M_MP:
             cout << "최대 MP : ";
             cin >> inputTEMP;
             if (IsInRange(inputTEMP))
-                ch.MAX_mp = inputTEMP;
+                this->MAX_mp = inputTEMP;
             else {
                 inputTEMP = -1;
                 break;
             }
-            ch.mp = ch.MAX_mp;
+            this->mp = this->MAX_mp;
             isAllUpdated[M_MP] = true;
             break;
         case ATK:
             cout << "공격력 : ";
             cin >> inputTEMP;
             if (IsInRange(inputTEMP))
-                ch.atk = inputTEMP;
+                this->atk = inputTEMP;
             else {
                 inputTEMP = -1;
                 break;
@@ -113,7 +117,7 @@ void CharacterInput(Character& ch, bool& isChMaded) {
             cout << "방어력 : ";
             cin >> inputTEMP;
             if (IsInRange(inputTEMP))
-                ch.def = inputTEMP;
+                this->def = inputTEMP;
             else {
                 inputTEMP = -1;
                 break;
@@ -124,7 +128,7 @@ void CharacterInput(Character& ch, bool& isChMaded) {
             cout << "민첩 : ";
             cin >> inputTEMP;
             if (IsInRange(inputTEMP))
-                ch.speed = inputTEMP;
+                this->speed = inputTEMP;
             else {
                 inputTEMP = -1;
                 break;
@@ -138,22 +142,27 @@ void CharacterInput(Character& ch, bool& isChMaded) {
 
         if (isAllUpdated[NAME] && isAllUpdated[M_HP] && isAllUpdated[M_MP] && isAllUpdated[ATK] && isAllUpdated[DEF] && isAllUpdated[SPD]) updateDone = true;
 
-        usedPoint = ch.MAX_hp + ch.MAX_mp + ch.atk + ch.def + ch.speed;
+        usedPoint = this->MAX_hp + this->MAX_mp + this->atk + this->def + this->speed;
     }
+
+    this->isChMaded = true;
+}
+
+void Character::QuickCHMade() {
+    this->name = "aaa";
+    this->MAX_hp = 40;
+    this->MAX_mp = 40;
+    this->hp = 40;
+    this->mp = 40;
+    this->atk = 40;
+    this->def = 40;
+    this->speed = 40;
+    this->Total_point = 200;
 
     isChMaded = true;
 }
 
-void QuickChMake(Character& ch, bool& isChMaded) {
-    ch.name = "aaa";
-    ch.MAX_hp = 40;
-    ch.MAX_mp = 40;
-    ch.hp = 40;
-    ch.mp = 40;
-    ch.atk = 40;
-    ch.def = 40;
-    ch.speed = 40;
-    ch.Total_point = 200;
-
-    isChMaded = true;
+void Character::Display() {
+    cout << "      체력  마력  공격력  방어력  속도" << endl;
+    cout << this->name << "   " << this->hp << "/" << this->MAX_hp << "   " << this->mp << "/" << this->MAX_mp << "    " << this->atk << "      " << this->def << "     " << this->speed << endl;
 }

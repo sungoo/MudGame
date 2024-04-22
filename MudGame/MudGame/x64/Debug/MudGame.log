@@ -1,0 +1,9 @@
+﻿  Character.cpp
+  Display.cpp
+  MudGame.cpp
+  Position.cpp
+  map.cpp
+  코드를 생성하고 있습니다...
+Character.obj : error LNK2019: "public: virtual __cdecl Element::~Element(void)" (??1Element@@UEAA@XZ)"int `public: __cdecl Character::Character(void)'::`1'::dtor$0" (?dtor$0@?0???0Character@@QEAA@XZ@4HA) 함수에서 참조되는 확인할 수 없는 외부 기호
+Position.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: virtual __cdecl Element::~Element(void)" (??1Element@@UEAA@XZ)
+C:\박성우\MudGame\MudGame\x64\Debug\MudGame.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.

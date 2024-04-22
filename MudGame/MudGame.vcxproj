@@ -132,6 +132,7 @@
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="MudGame.cpp" />
+    <ClCompile Include="Position.cpp" />
     <ClCompile Include="Swap.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,7 @@
     <ClInclude Include="Display.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="Swap.h" />
   </ItemGroup>
   <ItemGroup>

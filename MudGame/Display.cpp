@@ -38,8 +38,8 @@ void displayTitle(string title) {
     cout << endl;
 }
 
-void displayMain(Character& ch, bool& isChMaded, MAP map) {
-    if (!isChMaded) {
+void displayMain(Character& ch, MAP map) {
+    if (!ch.isChMaded) {
         cout << "캐릭터가 존재하지 않습니다. 캐릭터를 먼저 만들어주세요." << endl;
         return;
     }
@@ -47,7 +47,7 @@ void displayMain(Character& ch, bool& isChMaded, MAP map) {
     {
         system("cls");
         displayMap(map);
-        displayCharacter(ch);
+        ch.Display();
         DRECT dir = moveInput();
 
         if (dir == DRECT::FIN) break;
@@ -56,10 +56,10 @@ void displayMain(Character& ch, bool& isChMaded, MAP map) {
     }
 }
 
-void displayInput(Character& ch, bool& isChMaded) {
+void displayInput(Character& ch) {
     char select = ' ';
 
-    if (isChMaded) {
+    if (ch.isChMaded) {
         cout << "캐릭터가 이미 존재합니다.\n재설정하시겠습니까?" << endl;
         cout << "    Y    /    N    " << endl;
         cin >> select;
@@ -70,7 +70,7 @@ void displayInput(Character& ch, bool& isChMaded) {
         switch (select) {
         case 'Y':
         case 'y':
-            CharacterInput(ch, isChMaded);
+            ch.Input();
             break;
         case 'N':
         case 'n':
@@ -81,13 +81,8 @@ void displayInput(Character& ch, bool& isChMaded) {
         }
     }
     else {
-        CharacterInput(ch, isChMaded);
+        ch.Input();
     }
-}
-
-void displayCharacter(Character ch) {
-    cout << "      체력  마력  공격력  방어력  속도" << endl;
-    cout << ch.name << "   " << ch.hp << "/" << ch.MAX_hp << "   " << ch.mp << "/" << ch.MAX_mp << "    " << ch.atk << "      " << ch.def << "     " << ch.speed << endl;
 }
 
 void displayMap(MAP m) {

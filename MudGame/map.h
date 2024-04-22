@@ -2,29 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Position.h"
 #define WID 40
 #define HIG 20
 using namespace std;
-
-struct Position {
-	int x;
-	int y;
-};
-
-enum DRECT {
-	NONE ,LEFT, UP, DOWN, RIGHT, FIN
-};
-
-enum THIGN {
-	AIR,	//' '
-	ST_POS,	//'$'
-	EX_POS,	//'+'
-	BOX,	//'m'
-	EVENT,	//'v'
-	SWITCH,	//'o', 'u'
-
-	BODER,	//'@'
-};
 
 struct MAP {
 	Position start;
