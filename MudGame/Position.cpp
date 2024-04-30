@@ -11,3 +11,7 @@ Element::Element(Position pos, THIGN spec) {
 	this->m_pos.y = pos.y;
 	this->spec = spec;
 }
+
+Element::~Element() {
+
+}

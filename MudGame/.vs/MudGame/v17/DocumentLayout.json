@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|solutionrelative:Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\MudGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|solutionrelative:MudGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Position.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|solutionrelative:Position.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -15,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|solutionrelative:Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\MudGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|solutionrelative:MudGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|solutionrelative:Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Display.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Display.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|solutionrelative:Display.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Position.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|solutionrelative:Position.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19835EC8-AC9E-4A67-8492-CA3AF98A8316}|MudGame.vcxproj|C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -66,38 +66,37 @@
               "RelativeToolTip": "map.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-18T02:02:29.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-18T02:02:29.021Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Character.h",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Character.h",
               "RelativeDocumentMoniker": "Character.h",
               "ToolTip": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Character.h",
               "RelativeToolTip": "Character.h",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABYAAAAXAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAABYAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-17T04:50:02.069Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Position.h",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Position.h",
               "RelativeDocumentMoniker": "Position.h",
               "ToolTip": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Position.h",
               "RelativeToolTip": "Position.h",
-              "ViewState": "AQIAABIAAAAAAAAAAAA2wB8AAAAIAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAACAAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-22T02:44:53.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Display.h",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Display.h",
               "RelativeDocumentMoniker": "Display.h",
@@ -105,18 +104,17 @@
               "RelativeToolTip": "Display.h",
               "ViewState": "AQIAAA8AAAAAAAAAAAAmwBYAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-18T01:39:57.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-18T01:39:57.948Z"
             }
           ]
         },
         {
           "DockedWidth": 233,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MudGame.cpp",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\MudGame.cpp",
               "RelativeDocumentMoniker": "MudGame.cpp",
@@ -130,20 +128,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Position.cpp",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Position.cpp",
               "RelativeDocumentMoniker": "Position.cpp",
               "ToolTip": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Position.cpp",
               "RelativeToolTip": "Position.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-22T03:22:34.352Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Line.cpp",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Line.cpp",
               "RelativeDocumentMoniker": "Line.cpp",
@@ -151,12 +149,11 @@
               "RelativeToolTip": "Line.cpp",
               "ViewState": "AQIAAAMAAAAAAAAAAIA7wA0AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-17T04:33:22.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T04:33:22.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Display.cpp",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Display.cpp",
               "RelativeDocumentMoniker": "Display.cpp",
@@ -164,25 +161,24 @@
               "RelativeToolTip": "Display.cpp",
               "ViewState": "AQIAACUAAAAAAAAAAIA7wCkAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-17T04:23:51.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T04:23:51.408Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Character.cpp",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Character.cpp",
               "RelativeDocumentMoniker": "Character.cpp",
               "ToolTip": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\Character.cpp",
               "RelativeToolTip": "Character.cpp",
-              "ViewState": "AQIAAAEAAAAAAAAAAIA7wAsAAAAYAAAA",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAHMAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-17T04:28:02.202Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "map.cpp",
               "DocumentMoniker": "C:\\\uBC15\uC131\uC6B0\\MudGame\\MudGame\\map.cpp",
               "RelativeDocumentMoniker": "map.cpp",
@@ -190,8 +186,7 @@
               "RelativeToolTip": "map.cpp",
               "ViewState": "AQIAAHUAAAAAAAAAAAAAAI4AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-18T02:29:26.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-18T02:29:26.725Z"
             },
             {
               "$type": "Document",
