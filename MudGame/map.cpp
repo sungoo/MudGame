@@ -1,29 +1,29 @@
 #include "map.h"
 
-void InitMap(MAP& map) {
-	map.start.x = 1;
-	map.start.y = 1;
-	map.end.x = 38;
-	map.end.y = 18;
+void MAP::InitMap() {
+	start.x = 1;
+	start.y = 1;
+	end.x = 38;
+	end.y = 18;
 
-	map.player = map.start;
+	player = start;
 
-	map.mapTag = 0;
-	map.next = map.mapTag + 1;
+	mapTag = 0;
+	next = mapTag + 1;
 
 	for (int i = 0; i < HIG; i++) {
 		for (int j = 0; j < WID; j++) {
-			if (j == map.start.x && i == map.start.y) 
-				map.map[i][j] = '$';
-			else if(j == map.end.x && i == map.end.y)
-				map.map[i][j] = '+';
+			if (j == start.x && i == start.y) 
+				map[i][j] = '$';
+			else if(j == end.x && i == end.y)
+				map[i][j] = '+';
 			else {
 				if(i == 0 || i == HIG-1) 
-					map.map[i][j] = '@';
+					map[i][j] = '@';
 				else if (j == 0 || j == WID-1) 
-					map.map[i][j] = '@';
+					map[i][j] = '@';
 				else
-					map.map[i][j] = ' ';
+					map[i][j] = ' ';
 			}
 		}
 	}
@@ -31,7 +31,7 @@ void InitMap(MAP& map) {
 	return;
 }
 
-void RoadMap(MAP& map, string fileName) {
+void MAP::RoadMap(string fileName) {
 	ifstream mapFile;
 	string data;
 	int li = 0;	//행
@@ -45,26 +45,26 @@ void RoadMap(MAP& map, string fileName) {
 			//0~19 까지는 맵 구성요소 정보
 			if (li < HIG) {
 				for (int cl = 0; cl < WID; cl++) {
-					map.map[li][cl] = temp[cl];
+					map[li][cl] = temp[cl];
 				}
 			}
 			else {//20 부턴 맵 상세 정보
 				if (li == HIG + 1)
-					map.start.y = atoi(temp);
+					start.y = atoi(temp);
 				if (li == HIG + 2)
-					map.start.x = atoi(temp);
+					start.x = atoi(temp);
 				if (li == HIG + 4)
-					map.end.y = atoi(temp);
+					end.y = atoi(temp);
 				if (li == HIG + 5)
-					map.end.x = atoi(temp);
+					end.x = atoi(temp);
 				if (li == HIG + 7)
-					map.mapTag = atoi(temp);
+					mapTag = atoi(temp);
 				if (li == HIG + 9)
-					map.next = atoi(temp);
+					next = atoi(temp);
 			}
 			li++;
 		}
-		UpdateMap(map);
+		UpdateMap();
 	}
 	else {
 		cout << "맵을 불러오지 못했습니다." << endl;
@@ -72,16 +72,16 @@ void RoadMap(MAP& map, string fileName) {
 	mapFile.close();
 }
 
-void UpdateMap(MAP& map) {
+void MAP::UpdateMap() {
 	for (int i = 0; i < HIG; i++) {
 		for (int j = 0; j < WID; j++) {
-			if (j == map.start.x && i == map.start.y)
-				map.map[i][j] = '$';
-			else if (j == map.end.x && i == map.end.y)
-				map.map[i][j] = '+';
+			if (j == start.x && i == start.y)
+				map[i][j] = '$';
+			else if (j == end.x && i == end.y)
+				map[i][j] = '+';
 		}
 	}
-	map.player = map.start;
+	player = start;
 }
 
 THIGN decideThings(char element) {

@@ -7,7 +7,7 @@
 #define HIG 20
 using namespace std;
 
-struct MAP {
+class MAP {
 	Position start;
 	Position end;
 	Position player;
@@ -16,14 +16,17 @@ struct MAP {
 
 	int mapTag;
 	int next;
+
+public:
+	//맵 초기화
+	void InitMap();
+	//파일로부터 맵 불러오기
+	void RoadMap(string fileName);
+	//맵 업데이트
+	void UpdateMap();
 };
 
-//맵 초기화
-void InitMap(MAP& map);
-//파일로부터 맵 불러오기
-void RoadMap(MAP& map, string fileName);
-//맵 업데이트
-void UpdateMap(MAP& map);
+
 
 //요소 구분시키기
 THIGN decideThings(char element);
