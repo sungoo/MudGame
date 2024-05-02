@@ -13,6 +13,7 @@ class MAP {
 	Position player;
 
 	char map[HIG][WID];
+	Element things[HIG][WID];
 
 	int mapTag;
 	int next;
@@ -24,15 +25,12 @@ public:
 	void RoadMap(string fileName);
 	//맵 업데이트
 	void UpdateMap();
+	//요소의 이동
+	void Move(Position& targit, DRECT dir);
 };
-
-
 
 //요소 구분시키기
 THIGN decideThings(char element);
-
-//요소의 이동
-void Move(Position& targit,DRECT dir, MAP& map);
 
 //이동 입력 받기
 DRECT moveInput();

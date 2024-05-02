@@ -84,30 +84,7 @@ void MAP::UpdateMap() {
 	player = start;
 }
 
-THIGN decideThings(char element) {
-	switch (element)
-	{
-	case ' ':
-		return THIGN::AIR;
-	case '$':
-		return THIGN::ST_POS;
-	case '+':
-		return THIGN::EX_POS;
-	case 'm':
-		return THIGN::BOX;
-	case 'v':
-		return THIGN::EVENT;
-	case 'o':
-	case 'u':
-		return THIGN::SWITCH;
-	case '@':
-		return THIGN::BODER;
-	default:
-		return THIGN::AIR;
-	}
-}
-
-void Move(Position& targit, DRECT dir, MAP& map) {
+void MAP::Move(Position& targit, DRECT dir) {
 	int curr_x = targit.x;
 	int curr_y = targit.y;
 
@@ -132,15 +109,39 @@ void Move(Position& targit, DRECT dir, MAP& map) {
 	if (curr_x<0 || curr_x>WID || curr_y<0 || curr_y>HIG)
 		return;
 	//이동하려는 위치에 무언가 없을때만 이동
-	if (map.map[curr_y][curr_x] == ' ' || map.map[curr_y][curr_x] == '$') {
+	if (map[curr_y][curr_x] == ' ' || map[curr_y][curr_x] == '$') {
 		targit.x = curr_x;
 		targit.y = curr_y;
 		return;
 	}
 	//이동위치에 무언가 있다면, 일단 이동시키지 않음.
 	//무언가의 속성에 따라 정해진 동작 실행.
-	THIGN element = decideThings(map.map[curr_y][curr_x]);
+	THIGN element = decideThings(map[curr_y][curr_x]);
 	//여기부턴 class로 바꿀 필요가 있을것 같음.
+}
+
+
+THIGN decideThings(char element) {
+	switch (element)
+	{
+	case ' ':
+		return THIGN::AIR;
+	case '$':
+		return THIGN::ST_POS;
+	case '+':
+		return THIGN::EX_POS;
+	case 'm':
+		return THIGN::BOX;
+	case 'v':
+		return THIGN::EVENT;
+	case 'o':
+	case 'u':
+		return THIGN::SWITCH;
+	case '@':
+		return THIGN::BODER;
+	default:
+		return THIGN::AIR;
+	}
 }
 
 DRECT moveInput() {
