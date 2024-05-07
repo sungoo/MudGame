@@ -29,5 +29,6 @@ public:
 
 	Element();
 	Element(Position pos, THIGN spec);
+	Element(int x, int y, THIGN spec);
 	virtual ~Element();
 };

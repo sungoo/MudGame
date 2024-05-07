@@ -45,7 +45,10 @@ void MAP::RoadMap(string fileName) {
 			//0~19 까지는 맵 구성요소 정보
 			if (li < HIG) {
 				for (int cl = 0; cl < WID; cl++) {
+					//출력 버퍼 업데이트
 					map[li][cl] = temp[cl];
+					//정보 버퍼 업데이트
+					things[li][cl] = Element(li, cl, decideThings(temp[cl]));
 				}
 			}
 			else {//20 부턴 맵 상세 정보
@@ -75,13 +78,17 @@ void MAP::RoadMap(string fileName) {
 void MAP::UpdateMap() {
 	for (int i = 0; i < HIG; i++) {
 		for (int j = 0; j < WID; j++) {
-			if (j == start.x && i == start.y)
+			if (j == start.m_pos.x && i == start.m_pos.y) {
 				map[i][j] = '$';
-			else if (j == end.x && i == end.y)
+				things[i][j] = start;
+			}
+			else if (j == end.m_pos.x && i == end.m_pos.y) {
 				map[i][j] = '+';
+				things[i][j] = end;
+			}
 		}
 	}
-	player = start;
+	player.m_pos = start.m_pos;
 }
 
 void MAP::Move(Position& targit, DRECT dir) {
@@ -118,6 +125,11 @@ void MAP::Move(Position& targit, DRECT dir) {
 	//무언가의 속성에 따라 정해진 동작 실행.
 	THIGN element = decideThings(map[curr_y][curr_x]);
 	//여기부턴 class로 바꿀 필요가 있을것 같음.
+}
+
+void MAP::Compare(Element targit)
+{
+
 }
 
 
