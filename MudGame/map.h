@@ -31,7 +31,7 @@ public:
 	void Move(Position& targit, DRECT dir);
 	//객체의 위치에 따라 맵 업데이트
 	//=>things의 정보를 출력용 map(char[][])에 업데이트
-	void Compare(Element targit);
+	void Compare();
 };
 
 //요소 구분시키기

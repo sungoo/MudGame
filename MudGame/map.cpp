@@ -1,10 +1,10 @@
 #include "map.h"
 
 void MAP::InitMap() {
-	start.x = 1;
-	start.y = 1;
-	end.x = 38;
-	end.y = 18;
+	start.m_pos.x = 1;
+	start.m_pos.y = 1;
+	end.m_pos.x = 38;
+	end.m_pos.y = 18;
 
 	player = start;
 
@@ -13,9 +13,9 @@ void MAP::InitMap() {
 
 	for (int i = 0; i < HIG; i++) {
 		for (int j = 0; j < WID; j++) {
-			if (j == start.x && i == start.y) 
+			if (j == start.m_pos.x && i == start.m_pos.y) 
 				map[i][j] = '$';
-			else if(j == end.x && i == end.y)
+			else if(j == end.m_pos.x && i == end.m_pos.y)
 				map[i][j] = '+';
 			else {
 				if(i == 0 || i == HIG-1) 
@@ -53,13 +53,13 @@ void MAP::RoadMap(string fileName) {
 			}
 			else {//20 부턴 맵 상세 정보
 				if (li == HIG + 1)
-					start.y = atoi(temp);
+					start.m_pos.y = atoi(temp);
 				if (li == HIG + 2)
-					start.x = atoi(temp);
+					start.m_pos.x = atoi(temp);
 				if (li == HIG + 4)
-					end.y = atoi(temp);
+					end.m_pos.y = atoi(temp);
 				if (li == HIG + 5)
-					end.x = atoi(temp);
+					end.m_pos.x = atoi(temp);
 				if (li == HIG + 7)
 					mapTag = atoi(temp);
 				if (li == HIG + 9)
@@ -127,9 +127,13 @@ void MAP::Move(Position& targit, DRECT dir) {
 	//여기부턴 class로 바꿀 필요가 있을것 같음.
 }
 
-void MAP::Compare(Element targit)
+void MAP::Compare()
 {
-
+	for (int i = 0; i < HIG; i++) {
+		for (int j = 0; j < WID; j++) {
+			map[i][j] = things[i][j].Spec2Char();
+		}
+	}
 }
 
 
@@ -147,8 +151,9 @@ THIGN decideThings(char element) {
 	case 'v':
 		return THIGN::EVENT;
 	case 'o':
+		return THIGN::SWITCH_ON;
 	case 'u':
-		return THIGN::SWITCH;
+		return THIGN::SWITCH_OFF;
 	case '@':
 		return THIGN::BODER;
 	default:

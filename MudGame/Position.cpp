@@ -22,3 +22,42 @@ Element::Element(Position pos, THIGN spec) {
 Element::~Element() {
 
 }
+
+char Element::Spec2Char() {
+	char temp;
+	switch (spec)
+	{
+	case AIR:
+		temp = ' ';
+		break;
+	case ST_POS:
+		temp = '$';
+		break;
+	case EX_POS:
+		temp = '+';
+		break;
+	case BOX:
+		temp = 'm';
+		break;
+	case EVENT:
+		temp = 'v';
+		break;
+	case SWITCH_ON:
+		temp = 'o';
+		break;
+	case SWITCH_OFF:
+		temp = 'u';
+		break;
+	case BODER:
+		temp = '@';
+		break;
+	case PLAYER:
+		temp = 'P';
+		break;
+	default:
+		temp = ' ';
+		break;
+	}
+
+	return temp;
+}

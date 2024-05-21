@@ -15,8 +15,8 @@ enum THIGN {
 	EX_POS,	//'+'
 	BOX,	//'m'
 	EVENT,	//'v'
-	SWITCH,	//'o', 'u'
-
+	SWITCH_ON,	//'o'
+	SWITCH_OFF,	//'u'
 	BODER,	//'@'
 	PLAYER,	//'P'
 };
@@ -31,4 +31,6 @@ public:
 	Element(Position pos, THIGN spec);
 	Element(int x, int y, THIGN spec);
 	virtual ~Element();
+
+	char Spec2Char();
 };
